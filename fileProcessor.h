@@ -12,12 +12,12 @@ class FileProcessor
         FileProcessor();
         string openFile(string); // takes filename, returns file content
         void processFile(string); // takes file content and sets the data array with data objects
-        void pushData(const Data*);
-        const Data* getData(); // returns array with data objects
+        void pushData(Data*);
+        Data* getData(int); // returns array with data objects
 
     private:
-        const Data* data[10000]; // array that will store data objects
-        string fileArray[10000];
+        Data* data[10000]; // array that will store data objects
+        int arrayIndex; // index of the current open slot in the array
 };
 
 #endif // APPLEFARMER_H

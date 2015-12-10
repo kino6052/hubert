@@ -11,11 +11,9 @@ int main(){
     FileProcessor fp;
     string str = "csv.csv";
     fp.openFile(str);
+    cout<<"id of the Object #11 is: "<<fp.getData(10)->getId()<<','<<fp.getData(10)->getLat()<<','<<fp.getData(10)->getLng()<<endl;
     return 0;
 }
-
-
-
 
 
 /*
