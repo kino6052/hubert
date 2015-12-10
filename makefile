@@ -21,14 +21,17 @@ CFLAGS  = -g -Wall
 #
 default: program
 
-program: boulderd.o main.o
-	$(CC) $(CFLAGS) -o program boulderd.o main.o
+program: boulderd.o main.o fileProcessor.o
+	$(CC) $(CFLAGS) -o program boulderd.o main.o fileProcessor.o
 
 # To create the executable file count we need the object files
 # countwords.o, counter.o, and scanner.o:
 #
 main.o:  main.cpp
 	$(CC) $(CFLAGS) -c main.cpp
+
+fileProcessor.o:  fileProcessor.cpp
+	$(CC) $(CFLAGS) -c fileProcessor.cpp fileProcessor.h
 
 # To create the object file countwords.o, we need the source
 # files countwords.c, scanner.h, and counter.h:

@@ -4,6 +4,12 @@ using namespace std;
 #include <iostream>
 #include <string>
 #include "boulderd.h"
+#include <fstream>
+#include <sstream>
+#include <cstdlib>
+/*
+*  DATA
+*/
 
 Data::Data(int idInput, double latInput, double lngInput, string nameInput, string typeInput, string donor_typeInput, string donor_sqftInput){
     id = idInput;
@@ -42,3 +48,4 @@ string Data::getDonorType(){
 string Data::getDonorSqft(){
     return donor_sqft;
 }
+
