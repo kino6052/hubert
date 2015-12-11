@@ -21,8 +21,8 @@ CFLAGS  = -g -Wall
 #
 default: program
 
-program: boulderd.o main.o
-	$(CC) $(CFLAGS) -o program boulderd.o main.o
+program: data.o main.o fileProcessor.o calculator.o
+	$(CC) $(CFLAGS) -o program data.o main.o fileProcessor.o calculator.o
 
 # To create the executable file count we need the object files
 # countwords.o, counter.o, and scanner.o:
@@ -30,12 +30,17 @@ program: boulderd.o main.o
 main.o:  main.cpp
 	$(CC) $(CFLAGS) -c main.cpp
 
+fileProcessor.o:  fileProcessor.cpp
+	$(CC) $(CFLAGS) -c fileProcessor.cpp fileProcessor.h
+
 # To create the object file countwords.o, we need the source
 # files countwords.c, scanner.h, and counter.h:
 #
-boulderd.o:  boulderd.cpp boulderd.h
-	$(CC) $(CFLAGS) -c boulderd.cpp boulderd.h
+data.o:  data.cpp data.h
+	$(CC) $(CFLAGS) -c data.cpp data.h
 
+calculator.o:  calculator.cpp calculator.h
+	$(CC) $(CFLAGS) -c calculator.cpp calculator.h
 
 clean: 
-	$(RM) program *.o *~
+	$(RM) program *.o *~ *.gch
