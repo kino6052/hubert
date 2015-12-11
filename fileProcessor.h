@@ -1,7 +1,7 @@
 #ifndef FILEPROCESSOR_H
 #define FILEPROCESSOR_H
 #include <string>
-#include "boulderd.h"
+#include "data.h"
 
 using namespace std;
 
@@ -10,13 +10,16 @@ class FileProcessor
 {
     public:
         FileProcessor();
-        string openFile(string); // takes filename, returns file content
+        
+        // SET METHODS
+        void openFile(); // takes filename, returns file content
         void processFile(string); // takes file content and sets the data array with data objects
-        void pushData(Data*);
-        Data* getData(int); // returns array with data objects
-
+        
+        // GET METHODS
+        Data getData(int); // returns array with data objects
+        int getArrayIndex();
     private:
-        Data* data[10000]; // array that will store data objects
+        Data data[10000]; // array that will store data objects
         int arrayIndex; // index of the current open slot in the array
 };
 
